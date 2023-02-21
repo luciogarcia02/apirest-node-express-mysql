@@ -11,7 +11,24 @@ module.exports = {
         createdAt: currentdate,
         updatedAt: currentdate,
         
-      }], {});
+      },
+      {
+        firstName: 'Lucas',
+        lastName: 'Alonso',
+        email:"lucasalons00@gmail.com",
+        createdAt: currentdate,
+        updatedAt: currentdate,
+        
+      },
+      {
+        firstName: 'Lucio',
+        lastName: 'Garcia',
+        email:"luciogarcialam@gmail.com",
+        createdAt: currentdate,
+        updatedAt: currentdate,
+        
+      }
+    ], {});
 
   },
 
