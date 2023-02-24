@@ -21,6 +21,20 @@ router.post('/create',async function(req,res){
  
 });
 
+// devuelve false o el usuario
+router.get('/existe/:id', async function(req, res) {
+  let dev = await users.existeId(req.params.id)
+  res.json(dev);
+});
 
-/*DELETE delete user*/
+/*DELETE delete user by id*/
+router.get('/deleteById/:id', async function(req,res){
+  if(users.existeId(req.params.id)){
+    await users.deleteById(req.params.id);
+    res.json("succes");
+  }else{
+    res.status(404)
+  }
+});
+
 module.exports = router;
