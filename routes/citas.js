@@ -21,6 +21,20 @@ router.get('/getCitasByUsuario/:id', async function(req, res) {
   res.json(dev);
 });
 
+router.post('/createCita', async function(req,res){
+  let body = req.body;
+  try{
+    let ok = await citas.createCita(body.Dia,body.Mes,body.UsuarioId,body.Hora,body.Motivo);
+    
+  }catch(e){
+    res.status(500)
+  }
+  if(ok){
+    res.status(201)
+  }else{
+    res.status(500).json("El usuario no existe");
+  }
+})
 
 
 module.exports = router;
